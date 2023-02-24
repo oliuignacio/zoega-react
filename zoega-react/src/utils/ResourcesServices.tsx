@@ -23,6 +23,15 @@ export const postResource = (resource) => {
   .catch(error=>console.log('Error in postResource service: ', error));
 };
 
+export const deleteResource = (id) => {
+  console.log('deleteResource id: ', url + '/posts/' + id);
+  
+  return fetch(url + '/posts/' + id, {
+    method: 'DELETE',
+  });
+};
+
+
 // export const sortEvents = (arr)=> arr.sort((a,b)=> {
 //   if (a.date < b.date) {
 //     return -1;

@@ -10,9 +10,10 @@ export default function ResourceCard({resource, setResources, id}) {
   // }
 
   return (
-    <div>
-      <h2>{resource.title}</h2>
-      <p>{resource.body}</p>
+    <div className="mt-4 ml-4">
+      <h2>title: {resource.title}</h2>
+      <p>body: {resource.body}</p>
+      <p>userId: {resource.userId}</p>
     </div>
   )
 }

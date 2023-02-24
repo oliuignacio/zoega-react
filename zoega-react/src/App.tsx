@@ -3,17 +3,19 @@ import './App.css';
 import Navbar from './components/Navbar';
 import AddForm from './components/AddForm';
 import ResourcesList from './components/ResourcesList';
+import { getResources } from './utils/ResourcesServices';
 
 export default function App() {
 
   const [resources, setResources] = useState([]);
   
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(response => response.json())
-      .then(json => setResources(json))
+    getResources().then((resourcesFromAPI) => {
+      setResources(resourcesFromAPI);
+    }
+    )
 
-  })
+  },[])
     
 
 

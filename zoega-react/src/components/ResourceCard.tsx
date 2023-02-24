@@ -14,6 +14,7 @@ export default function ResourceCard({resource, setResources, id}) {
       <h2>title: {resource.title}</h2>
       <p>body: {resource.body}</p>
       <p>userId: {resource.userId}</p>
+      <p>id: {resource.id}</p>
     </div>
   )
 }

@@ -15,8 +15,11 @@ export const postResource = (resource) => {
     body: JSON.stringify(resource),
     headers: {'Content-type': 'application/json; charset=UTF-8'},
   })
-  .then((result)=>result.json())
-  .then((json)=>console.log(json))
+  .then((result)=>{
+    if (!result.ok) throw new Error('Error in postResource service: ' + result.status);
+    return result.json();
+  })
+  //.then((json)=>return json)
   .catch(error=>console.log('Error in postResource service: ', error));
 };
 

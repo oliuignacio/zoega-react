@@ -8,17 +8,16 @@ export default function AddForm({setResources}) {
     e.preventDefault();
     const title = e.target.title.value;
     const body = e.target.body.value;
-    const userId = e.target.userId.value;
+    const userId = 1;
     const newResource = {title, body, userId};
 
-    if (title === '' || body === '' || userId === '') {
+    if ( !title || !body ) {
       alert('Please fill all fields');
       return;
     }
-
-    postResource(newResource)
-      .then((resourceFromAPI)=> {
+    postResource(newResource).then((resourceFromAPI)=> {
         setResources(prevResources => [resourceFromAPI, ...prevResources]);
+        e.target.reset();
       })
       .catch((err) => console.log('Error posting new Resource: ', err));
   }

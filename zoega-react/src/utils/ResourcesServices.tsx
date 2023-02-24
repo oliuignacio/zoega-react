@@ -19,7 +19,6 @@ export const postResource = (resource) => {
     if (!result.ok) throw new Error('Error in postResource service: ' + result.status);
     return result.json();
   })
-  //.then((json)=>return json)
   .catch(error=>console.log('Error in postResource service: ', error));
 };
 

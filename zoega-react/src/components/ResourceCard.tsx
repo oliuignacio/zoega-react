@@ -3,13 +3,6 @@ import { deleteResource } from '../utils/ResourcesServices'
 
 export default function ResourceCard({resource, setResources, id}) {
 
-  // {
-  //   id: 1,
-  //   title: '...',
-  //   body: '...',
-  //   userId: 1
-  // }
-
   const deleteHandler = () => {
     
     deleteResource(resource.id).then((response) => {

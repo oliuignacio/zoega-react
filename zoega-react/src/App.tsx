@@ -8,6 +8,8 @@ import { getResources } from './utils/ResourcesServices';
 export default function App() {
 
   const [resources, setResources] = useState([]);
+  //since API does not updates id, we need to keep track of it ourselves
+  const [idCounter, setIdCounter] = useState(0);
   
   useEffect(() => {
     getResources().then((resourcesFromAPI) => {
@@ -22,7 +24,7 @@ export default function App() {
   return (
     <div>
       <Navbar></Navbar>
-      <AddForm setResources={setResources}></AddForm>
+      <AddForm idCounter={idCounter} setIdCounter={setIdCounter} setResources={setResources}></AddForm>
       <ResourcesList resources={resources} setResources={setResources}/>
       
     </div>

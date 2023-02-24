@@ -31,6 +31,7 @@ export default function AddForm({setResources}) {
       <input type="text" name="title" placeholder="Add new title" />
       <label>Body: </label>
       <input type="text" name="body" placeholder="Add new body" />
+      <button type="submit">Add</button>
       </form>
     </div>
   )

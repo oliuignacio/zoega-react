@@ -1,0 +1,21 @@
+
+@media (max-width: 1600px) {
+  .resourceslist {
+    display: grid;
+    grid-template-columns: 1fr 1fr  1fr;
+  }
+}
+
+@media (max-width: 1201px) {
+  .resourceslist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .resourceslist {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

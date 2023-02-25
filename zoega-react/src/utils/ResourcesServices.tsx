@@ -1,35 +1,35 @@
-const url = "https://jsonplaceholder.typicode.com"
+const url = "https://jsonplaceholder.typicode.com";
 
 export const getResources = async () => {
   try {
-    const result = await fetch(url + '/posts');
+    const result = await fetch(url + "/posts");
     return await result.json();
   } catch (error) {
-    console.log('Error in getResources: ', error);
+    console.log("Error in getResources: ", error);
   }
-}
+};
 
 export const postResource = (resource) => {
-  return fetch(url + '/posts', {
-    method: 'POST',
+  return fetch(url + "/posts", {
+    method: "POST",
     body: JSON.stringify(resource),
-    headers: {'Content-type': 'application/json; charset=UTF-8'},
+    headers: { "Content-type": "application/json; charset=UTF-8" },
   })
-  .then((result)=>{
-    if (!result.ok) throw new Error('Error in postResource service: ' + result.status);
-    return result.json();
-  })
-  .catch(error=>console.log('Error in postResource service: ', error));
+    .then((result) => {
+      if (!result.ok)
+        throw new Error("Error in postResource service: " + result.status);
+      return result.json();
+    })
+    .catch((error) => console.log("Error in postResource service: ", error));
 };
 
 export const deleteResource = (id) => {
-  console.log('deleteResource id: ', url + '/posts/' + id);
-  
-  return fetch(url + '/posts/' + id, {
-    method: 'DELETE',
+  console.log("deleteResource id: ", url + "/posts/" + id);
+
+  return fetch(url + "/posts/" + id, {
+    method: "DELETE",
   });
 };
-
 
 // export const sortEvents = (arr)=> arr.sort((a,b)=> {
 //   if (a.date < b.date) {
@@ -37,10 +37,9 @@ export const deleteResource = (id) => {
 //   }
 //   else if (a.date > b.date) {
 //    return 1;
-//   }  
+//   }
 //   return 0;
 // });
-
 
 // export const filterOldEvents = (arr) => {
 //   return arr=arr.filter((a) => String(a.date) > String(Date.now()))

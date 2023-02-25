@@ -1,0 +1,18 @@
+.add-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+ }
+
+ input {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  font-size: 18px;
+  padding: 0 20px 0 50px;
+  color: inherit;
+ }
+
+ input:focus {
+  border-color: #3b82f6;
+ }
